@@ -1,5 +1,5 @@
 import { useState } from "react";
-import List from "./List";
+import List from "./components/List";
 
 function App() {
     const [searchValue, setSearchValue] = useState("");
@@ -9,7 +9,7 @@ function App() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center gap-4 relative top-32">
+        <div className="flex flex-col items-center justify-center gap-4 relative top-40">
             {/* Search Box */}
             <div className="flex justify-center items-center w-5/12 h-18">
                 <input
@@ -20,8 +20,8 @@ function App() {
                     onChange={captureInput}
                 />
             </div>
-            <div className="container border border-black rounded w-5/12 h-auto">
-                <List />
+            <div className="container border border-black rounded w-5/12 h-80 overflow-hidden overflow-y-auto px-5">
+                <List name={searchValue} />
             </div>
         </div>
     );
